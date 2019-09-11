@@ -14,12 +14,22 @@ api:    provide status for external
 
 init tcp, udp socket
 
-send command to server
+with each pool:
+  send command to server by network
+  listen data from server by network
+  
+  pool can be deactive at any time.
 
-listen data from server
+with rig
 
-
-
+send data to rig by i2c/spi/uart
+    command
+    mining data
+    
+receive data from rig i2c/spi/uart
+    found nounce
+    status
+    
 ## Todo
 0. Run a controller project with(FreeRTOS, Lwip, SSL(optional)).
 1. Understand Cgminer function.
